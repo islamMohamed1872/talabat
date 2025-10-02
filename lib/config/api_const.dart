@@ -1,0 +1,19 @@
+
+const String baseUrl = "https://talabat.qada.digital/api/v1";
+const String imageBaseUrl = "https://talabat.qada.digital/storage/app/public/restaurant/";
+const String sandwichBaseUrl = "https://talabat.qada.digital/public/assets/admin/img/100x100/";
+const String registerUrl = "$baseUrl/register/sign-up";
+const String loginUrl = "$baseUrl/register/login";
+const String getCategoriesUrl = "$baseUrl/categories";
+const String getAdsUrl = "$baseUrl/advertisement/list";
+const String getZonesUrl = "$baseUrl/zone/list";
+const String getAllRestaurantsUrl = "$baseUrl/restaurants/get-restaurants/all";
+const String getRestaurantDetailsUrl = "$baseUrl/restaurants";
+const String getSandwichDetailsUrl = "$baseUrl/products/details";
+const String getPopularProductsUrl = "$baseUrl/products/popular?limit=10&offset=1";
+const String getWalletDetailsUrl = "$baseUrl/customer/wallet/summary";
+const String updateUserInfoUrl = "$baseUrl/register/update-info";
+const String uploadProfileImageUrl = "$baseUrl/register/update-info";
+const String getSearchResultUrl = "$baseUrl/products/food-or-restaurant-search";
+const String getAllOrdersUrl = "$baseUrl/customer/order/list";
+const String placeOrderUrl = "$baseUrl/customer/order/place-multi";

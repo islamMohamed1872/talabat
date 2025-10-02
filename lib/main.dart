@@ -3,18 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodapp/modules/auth/login/cubit/login_cubit.dart';
-import 'package:foodapp/modules/auth/login/login_screen.dart';
-import 'package:foodapp/modules/cart/cart_screen.dart';
-import 'package:foodapp/modules/home/cubit/home_cubit.dart';
-import 'package:foodapp/modules/home/screens_holder.dart';
-import 'package:foodapp/modules/profile/cubit/profile_cubit.dart';
-import 'package:foodapp/modules/store/cubit/store_cubit.dart';
-import 'package:foodapp/modules/store/sandwich_details_screen.dart';
-import 'package:foodapp/modules/store/store_details_screen.dart';
-
-import 'cache_helper/cache_helper.dart';
-import 'network/remote/dio_helper.dart';
+import 'package:foodapp/controllers/login/login_cubit.dart';
+import 'package:foodapp/services/network/dio_helper.dart';
+import 'package:foodapp/views/login/login_screen.dart';
+import 'package:foodapp/views/cart/cart_screen.dart';
+import 'package:foodapp/controllers/cart/cart_cubit.dart';
+import 'package:foodapp/controllers/home/home_cubit.dart';
+import 'package:foodapp/controllers/profile/profile_cubit.dart';
+import 'package:foodapp/controllers/store/store_cubit.dart';
+import 'services/storage/cache_helper.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,9 +49,10 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => LoginCubit(),),
-          BlocProvider(create: (context) => HomeCubit()..getCategories()..getAds(),),
+          BlocProvider(create: (context) => CartCubit(),),
+          BlocProvider(create: (context) => HomeCubit()..getCategories()..loadCachedZone(),),
           BlocProvider(create: (context) => ProfileCubit()..loadPreferences(),),
-          BlocProvider(create: (context) => StoreCubit(),),
+          BlocProvider(create: (context) => StoreCubit()..getRestaurants(),),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',

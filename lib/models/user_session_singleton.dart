@@ -7,10 +7,12 @@ class UserSession {
 
   UserModel? user;
   String? token;
+  String? zoneId;
 
   void clear() {
     token = null;
     user = null;
+    zoneId = null;
   }
 
   bool get isLoggedIn => user != null && token != null;
