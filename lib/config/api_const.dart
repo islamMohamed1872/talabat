@@ -1,7 +1,7 @@
 
-const String baseUrl = "https://talabat.qada.digital/api/v1";
-const String imageBaseUrl = "https://talabat.qada.digital/storage/app/public/restaurant/";
-const String sandwichBaseUrl = "https://talabat.qada.digital/public/assets/admin/img/100x100/";
+const String baseUrl = "BASE_URL";
+const String imageBaseUrl = "IMAGE_BASE_URL";
+const String sandwichBaseUrl = "SADNWICH_BASE_URL";
 const String registerUrl = "$baseUrl/auth/sign-up";
 const String loginUrl = "$baseUrl/auth/login";
 const String getCategoriesUrl = "$baseUrl/categories";
