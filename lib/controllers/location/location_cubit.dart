@@ -85,7 +85,7 @@ class LocationCubit extends Cubit<LocationStates>{
         url: "https://maps.googleapis.com/maps/api/geocode/json",
         queryParams: {
           "latlng": "${location.latitude},${location.longitude}",
-          "key": "AIzaSyDSG1JvtmERikUhwGhdRupHGbYVHqEX_xA",
+          "key": "API_KEY",
           "language": language,
         },
       );
