@@ -190,6 +190,10 @@ class StoreCubit extends Cubit<StoreStates>{
           .map((addon) => {"name": addon.name, "count": 0,'id':addon.id})
           .toList();
 
+      if(restaurant == null){
+        getStoreDetails(sandwichDetails!.id);
+      }
+
       emit(GetSandwichDetailsSuccessState());
     } catch (error) {
       emit(GetSandwichDetailsErrorState());

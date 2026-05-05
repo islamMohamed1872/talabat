@@ -22,10 +22,11 @@ void main()async {
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  // Set status bar (notification bar) color
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Color(0xFFFF7119), // your color here
-    statusBarIconBrightness: Brightness.light, // light = white icons, dark = black icons
+
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+    statusBarColor: Color(0xFFFF7119),
+    statusBarIconBrightness: Brightness.light,
   ));
 
   runApp(
